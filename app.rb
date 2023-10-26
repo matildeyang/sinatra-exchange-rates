@@ -58,7 +58,7 @@ get("/:from_currency/:to_currency") do
   parsed_data = JSON.parse(raw_data_string)
 
   # get the symbols from the JSON
-  @symbols = parsed_data
+  @amount = parsed_data.fetch("result")
 
   erb(:destination_page)
 end
